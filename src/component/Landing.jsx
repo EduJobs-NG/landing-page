@@ -31,7 +31,7 @@ export const Landing = () => {
           <Email />
 
           {/* Footer */}
-          <div className="pt-[2rem] flex flex-row items-center gap-[3rem] md:gap-[5rem] justify-between">
+          <div className="pt-[2rem] flex flex-row items-center mr-[1rem] gap-[3rem] md:gap-[5rem] justify-between">
             {social.map((item, index) => {
               return (
                 <a key={index} href={item.url}>
