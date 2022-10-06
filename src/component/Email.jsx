@@ -38,6 +38,8 @@ export const Email = () => {
               placeholder="Email address"
               name="email"
             ></Field>
+            <ErrorMessage component={FormError} name="email" />
+
             <div className="flex justify-center items-center ">
             <button
               className="mt-[1rem] bg-[#02378B] rounded-lg  text-white px-[2rem] py-[0.5rem]"
@@ -46,7 +48,6 @@ export const Email = () => {
               SUBMIT
             </button>
             </div>
-            <ErrorMessage component={FormError} name="email" />
           </div>
 
 
