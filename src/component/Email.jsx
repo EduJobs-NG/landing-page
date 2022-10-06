@@ -2,17 +2,28 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import FormError from "./FormError";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid email address").required("Required"),
 });
-const onSubmit = (values) => {
+const onSubmit = async (values) => {
   console.log(values);
+  const response = await axios.post(`https://edujobsng.herokuapp.com/api/v1/email/newsletters/`)
+  .catch( err => toast.error(err.message) )
+
+  if (response){
+    console.log(response)
+    toast.success('Email saved successfully.')
+  }
 };
 
 export const Email = () => {
   return (
     <section className="containe mx-auto max-w-[600px] mt-[1rem]">
+      <ToastContainer />
+
       <Formik
         initialValues={{ email: "" }}
         onSubmit={onSubmit}
@@ -35,7 +46,7 @@ export const Email = () => {
               SUBMIT
             </button>
             </div>
-          
+            <ErrorMessage component={FormError} name="email" />
           </div>
 
 
@@ -54,8 +65,9 @@ export const Email = () => {
             >
               SUBMIT
             </button>
+            <ErrorMessage component={FormError} name="email" />
           </div>
-          <ErrorMessage component={FormError} name="email" />
+          
         </Form>
       </Formik>
     </section>
