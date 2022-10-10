@@ -10,7 +10,7 @@ const validationSchema = Yup.object({
 });
 const onSubmit = async (values) => {
   console.log(values);
-  const response = await axios.post(`https://edujobsng.herokuapp.com/api/v1/email/newsletters/`)
+  const response = await axios.post(`https://edujobsng.herokuapp.com/api/v1/email/newsletters/`, values)
   .catch( err => toast.error(err.message) )
 
   if (response){
