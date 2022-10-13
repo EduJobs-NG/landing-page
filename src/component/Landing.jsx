@@ -36,7 +36,7 @@ Subscribe for more updates.
           <div className="pt-[2rem] flex flex-row items-center mr-[1rem] gap-[3rem] md:gap-[5rem] justify-between">
             {social.map((item, index) => {
               return (
-                <a key={index} href={item.url}>
+                <a key={index} target="_blank"href={item.url}>
                   <img src={item.name} alt="" />
                 </a>
               );

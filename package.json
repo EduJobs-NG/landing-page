@@ -1,5 +1,6 @@
 {
   "name": "edujobs-landingpage",
+  "homepage": "http://edujobsng.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
